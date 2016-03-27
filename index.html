@@ -1,29 +1,45 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-  <meta name="author" content="Hendrik Sollich">
-  <meta name="robots" content="index"><meta name="robots" content="nofollow">
-	<link href="style.css" type="text/css" rel="stylesheet" />
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="author" content="Hendrik Sollich">
+    <meta name="robots" content="index"><meta name="robots" content="nofollow">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
 
-  <title>hoodie.de (1)</title>
-</head>
-<body>
+    <title>hoodie.de</title>
 
-<br><br><br>
-<center>
-<div class="content">
-<h1 class="title">hoodie.de</h1>
-<br/><br/>
-<br/><br/>
-    <table width="300" cellspacing="0">
-      <tr> <td class="url"><a href="http://blog.hoodie.de/">hoodie blog</a> </td> </tr>
-      <tr> <td class="url"><a href="https://github.com/hoodie/">hoodie on github</a> </td> </tr>
-      <tr> <td class="url"><a href="https://twitter.com/hoodie_de/">... on twitter</a> </td> </tr>
-      <tr> <td class="url"><a href="https://keybase.io/hoodie/">... on keybase.io</a> </td> </tr>
-    </table>
-</div>
-</center>
+    <script src="stripes.js"></script>
 
-</body>
+  </head>
+  <body>
+
+    <br><br><br>
+    <center>
+      <div class="content">
+        <h1 class="title">hoodie.de</h1>
+        <br/><br/>
+        <br/><br/>
+        <table width="300" cellspacing="0">
+          <tr> <td class="url"><a href="http://blog.hoodie.de/">hoodie blog</a> </td> </tr>
+          <tr> <td class="url"><a href="https://github.com/hoodie/">hoodie on github</a> </td> </tr>
+          <tr> <td class="url"><a href="https://twitter.com/hoodie_de/">... on twitter</a> </td> </tr>
+          <tr> <td class="url"><a href="https://keybase.io/hoodie/">... on keybase.io</a> </td> </tr>
+        </table>
+      </div>
+    </center>
+    <canvas style="display:none" width="1000" height="600" id="stripe_canvas"></canvas>
+    <script>
+        let canvas = document.querySelector("#stripe_canvas");
+        if (canvas.getContext){
+            let ctx = canvas.getContext('2d');
+            render(ctx);
+            console.log(
+            document.querySelector(".content").style.height
+            );
+            document.querySelector(".content").style.background = "url(" + canvas.toDataURL() + ")";
+        } else {
+            console.warn("no canvas support");
+        }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>ROT13 - de/encoder</title>
+<script type="text/javascript">
+<!-- ... Quelle Dummy ...
+
+function rot13()
+{
+	var keycode	= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	if(document.formu.usekeyqm.checked){
+		var keycode = document.formu.key.value.toUpperCase();
+		//document.formu.laenge.value = keycode.length;
+	}
+	else{
+		var keycode	= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	}
+		var text	= new String(document.formu.code.value)
+		var textrot	= new String()
+
+		for(var i = 0; i < text.length; i++)
+		{
+			var codechar	= text.substring(i, i + 1)
+			var pos = keycode.indexOf(codechar.toUpperCase())
+
+			if(pos >= 0)
+			{
+				pos = (pos + keycode.length / 2) % keycode.length
+				codechar	= (codechar == codechar.toUpperCase()) ?
+							keycode.substring(pos, pos + 1) :
+							keycode.substring(pos, pos + 1).toLowerCase()
+			}
+			textrot	= textrot + codechar
+		}
+		document.formu.code.value = textrot
+}
+
+// -->
+</script>
+	</head>
+	<body>
+		<center>
+		<form name="formu" onsubmit="rot13()">
+			<textarea name="code" rows="8" cols="55" stryle="font-size:19px;font-weight:bold;"></textarea><br>
+			<input type="button" name="klick" onClick="rot13();" value="encode">
+			<input type="text" name="key"><input type="checkbox" name="usekeyqm">
+			<input type="button" onClick="document.formu.code.value = document.formu.code.value.toUpperCase()" value="+">
+			<input type="button" onClick="document.formu.code.value = document.formu.code.value.toLowerCase()" value="-">
+			<!--<input type="text" name="laenge">-->
+		</form>
+		</center>
+	</body>
+</html>

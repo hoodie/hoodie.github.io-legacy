@@ -1,0 +1,95 @@
+@import url("fonts/fonts.css");
+
+
+body{
+  background-color:#efffef;
+	font-family: Arial,Helvetica,Sans-serif;
+	padding:0px;
+	margin:0px;
+}
+
+.content{
+  background-color:#d0f0d0;
+	background-image: url("../images/home.png");
+  border:1px #c0e0c0 solid;
+  color: #546354;
+  height:360px;
+}
+
+h1.title{
+  font-size:4rem;
+  font-weight: normal;
+  font-family: Vollkorn, serif;
+
+	text-shadow: #686 0px 3px 3px;
+
+  padding: 10px;
+  margin: 0px;
+  margin-top: 17px;
+  width:100%;
+}
+a{
+  color:#6F806F;
+  text-decoration:none;
+}
+
+table{
+	border:#6F806F 0px solid;
+	border: 1px #8fa88f solid;
+	background-color: #d3f3d3;
+	font-family: Helvetica, Vera;
+	text-shadow: #686 0px 3px 3px;
+}
+
+td.url {
+	font-style:italic;
+	text-align:right;
+}
+
+td.url a{
+	color: #000000;
+	font-size:14px;
+}
+
+td.desc{
+	font-size:13px;
+	text-align:right;
+	border: 1px #8fa88f solid;
+	background-color: #d3f3d3;
+}
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .content{
+    width:400px;
+  }
+  h1.title{
+    font-size:4rem;
+  }
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .content{
+    width:560px;
+  }
+  h1.title{
+    font-size:5rem;
+  }
+  table {
+    margin-left:150px;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
